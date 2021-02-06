@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import DineOptions from './components/DineOptions';
+import DineOptions from './components/ds-dine-options/DineOptions';
 
 
 function App() {
