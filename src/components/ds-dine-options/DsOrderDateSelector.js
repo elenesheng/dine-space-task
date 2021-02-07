@@ -17,6 +17,7 @@ import ScheduleIcon from '@material-ui/icons/Schedule';
 import { useSelector, useDispatch } from "react-redux";
 import { setOrderDate, setOrderTime } from "../../store/actionTypes";
 import reportWebVitals from './../../reportWebVitals';
+import TimeListItem from "./TimeListItem";
 
 
 
@@ -80,8 +81,9 @@ function DsOrderDateSelector() {
     dispatch(setOrderDate(val.format("DD MMM YYYY")))
   }
 
+
   function timeHandler(e){
-    dispatch(setOrderTime(e.target.value))
+    dispatch(setOrderTime(e.target.innerHTML));
   }
 
 
@@ -89,9 +91,10 @@ function DsOrderDateSelector() {
   function iconStyles() {
     return {
       calendarTodayIcon: {
-        opacity: "0.4",
+        opacity: "0.3",
         position: "absolute",
         left: "8px",
+        fontSize: "20px"
       },
       expandMoreIcon: {
         position: 'absolute',
@@ -102,6 +105,11 @@ function DsOrderDateSelector() {
       },
       backIcon: {
         color: "#5B6BC8"
+      },
+      scheduleIcon: {
+        marginRight: "-4px",
+        opacity: "0.4",
+        fontSize: "20px"
       }
     }
   }
@@ -176,17 +184,16 @@ function DsOrderDateSelector() {
               </Grid>
               <Grid item xs={4}>
                 <div className="timewrapper">
-                  <ScheduleIcon />
+                  <ScheduleIcon className={classes.scheduleIcon}/>
                   <h5 className="ds-heading">Arrival Time</h5>
                 </div>
-                <select size="6" className="scrollable-container" onChange={timeHandler}>
-                  <option selected>ASAP</option>
-                  <option value="15:45">15 : 45</option>
-                  <option value="15:45">15 : 45</option>
-                  <option value="16:45">16 : 45</option>
-                  <option value="13:45">13 : 45</option>
-                  <option value="13:45">13 : 45</option>
-                </select>
+                <ul className="scrollable-container">
+                  <TimeListItem value="ASAP" onClick={timeHandler} />
+                  <TimeListItem value="10:15" onClick={timeHandler} />
+                  <TimeListItem value="12:15" onClick={timeHandler} />
+                  <TimeListItem value="14:15" onClick={timeHandler} />
+                  <TimeListItem value="20:15" onClick={timeHandler} />
+                </ul>
 
               </Grid>
             </div>
@@ -194,7 +201,7 @@ function DsOrderDateSelector() {
             <hr className="separator"></hr>
             <div className="bottom-buttons">
               <a onClick={clear} className="clear">Clear All</a>
-              <a className="done">DONE</a>
+              <a className="done" onClick={handleClose}>DONE</a>
             </div>
           </Popover>
         </ThemeProvider>

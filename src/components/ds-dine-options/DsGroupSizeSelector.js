@@ -10,6 +10,8 @@ import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import { useDispatch, useSelector } from 'react-redux';
 import { setGroupSize } from './../../store/actionTypes';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 
 
 function DsGroupSizeSelector() {
@@ -29,9 +31,10 @@ function DsGroupSizeSelector() {
   function iconStyles() {
     return {
       personIcon: {
-        opacity: "0.4",
+        opacity: "0.3",
         position: "absolute",
         left: "8px",
+        fontSize: "20px"
       },
       expandMoreIcon: {
         position: 'absolute',
@@ -40,6 +43,12 @@ function DsGroupSizeSelector() {
       popOverPersonIcon: {
         width: "18px",
         marginRight: "3px"
+      },
+      operatorIcon: {
+        fontSize: "30px",
+        border: "1px solid black",
+        borderRadius: "50%",
+        cursor: "pointer"
       }
     }
   }
@@ -68,7 +77,7 @@ function DsGroupSizeSelector() {
     <>
       <button className={active ? "active ds-button" : "ds-button"} onClick={handleClick}>
         <PersonIcon className={classes.personIcon} />
-        <span className="button-value">{groupSize}</span>Person
+        <span className="button-value">{groupSize + " " + "Person"}</span> 
         <ExpandMoreIcon className={classes.expandMoreIcon} />
       </button>
 
@@ -97,9 +106,9 @@ function DsGroupSizeSelector() {
             </Grid>
             <Grid item xs={6}>
               <div className="persons-counter">
-                <div className="operator" onClick={removePeople} className={groupSize > 1 ? "active" : "disabled"}><RemoveCircleOutlineIcon /></div>
-                <span className="value"> {groupSize} </span>
-                <div className="operator" onClick={addPeople}><AddCircleOutlineIcon /></div>
+                <div className="operator" onClick={removePeople} className={groupSize > 1 ? "active" : "disabled"}><RemoveIcon className={classes.operatorIcon} /></div>
+                <span className="value"> {" " + groupSize + " " + "People"} </span>
+                <div className="operator" onClick={addPeople}><AddIcon className={classes.operatorIcon} /></div>
               </div>
             </Grid>
           </Grid>
@@ -108,7 +117,7 @@ function DsGroupSizeSelector() {
         <hr className="separator"></hr>
         <div className="bottom-buttons">
           <a className="clear" onClick={clear}>Clear All</a>
-          <a className="done">DONE</a>
+          <a className="done" onClick={handleClose}>DONE</a>
         </div>
       </Popover>
 

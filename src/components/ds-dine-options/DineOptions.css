@@ -45,9 +45,10 @@
     align-items: center;
     position: relative;
     width: 217px;
-    padding: 0 38px;
+    padding: 0 32px;
     outline: none;
     margin-right: 20px;
+    cursor: pointer;
 }
 .ds-button.active {
     background: #ACB4D8; 
@@ -67,6 +68,7 @@
     border-radius: 4px;
     color: white;
     padding: 12px 40px;
+    cursor: pointer;
 }
 
 .separator {
@@ -83,6 +85,7 @@
     line-height: 21px;
     letter-spacing: -0.82px;
     color: rgba(78, 78, 78, 0.5);
+    cursor: pointer;
 }
 .d-flex {
     display: flex;
@@ -106,24 +109,23 @@
     display: flex;
     flex-flow: column;
     overflow-y: auto;
-    height: 125px;
-    width: 100%;
+    height: 155px;
     border: none;
     outline: none;
     position: relative;
     top: 42px;
 }
-.scrollable-container option:checked {
+.time.active-time {
     border-top: 3px solid #5B6BC8;
     border-bottom: 3px solid #5B6BC8;
-    background: linear-gradient(white, white);
-    background-color: white !important; /* for IE */
-    color: white !important;
-    /* box-shadow: 0 0 10px 100px white inset; */
+    background-color: white;
 }
-.scrollable-container option{
+
+.time{
     padding: 15px 0px;
     text-align: center;
+    list-style: none;
+    cursor: pointer;
 }
 ::-webkit-scrollbar {
     width: 0px;
@@ -138,12 +140,6 @@
     font-weight: 600;
 }
 
-#persons-popover .MuiPopover-paper {
-    width: 325px;
-    left: 701px!important;
-    padding: 20px 20px 0px;
-}
-
 .persons-wrapper {
     height: 50px;
 }
@@ -151,4 +147,18 @@
 .persons-counter {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+}
+.persons-counter .disabled {
+    opacity: 0.3;
+}
+.date-group-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+.value {
+    margin: 0 5px;
+}
+.MuiIconButton-colorSecondary:hover {
+    background-color: transparent!important;
 }

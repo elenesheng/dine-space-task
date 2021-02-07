@@ -16,7 +16,7 @@ function DineOptions() {
         <DsOrderTypeSelector ordertype={orderType} />
       </Grid>
       <Grid item xs={6}>
-        <div className="d-flex">
+        <div className="date-group-wrapper">
           <DsOrderDateSelector />
           <DsGroupSizeSelector />
         </div>

@@ -6,5 +6,5 @@ export const initialState = {
     orderType: "dineout",
     orderDate: null,
     groupSize: 1,
-    orderTime: ""
+    orderTime: "ASAP"
 }
