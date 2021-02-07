@@ -159,8 +159,9 @@
 .value {
   margin: 0 5px;
 }
-.MuiIconButton-colorSecondary:hover {
+.MuiIconButton-colorSecondary:hover, .MuiRadio-colorSecondary.Mui-checked {
   background-color: transparent !important;
+  color: transparent!important;
 }
 .MuiPickersDay-daySelected:hover {
   background-color: transparent !important;
