@@ -6,9 +6,8 @@ import DsOrderDateSelector from "./DsOrderDateSelector";
 import DsGroupSizeSelector from "./DsGroupSizeSelector";
 import { useSelector } from "react-redux";
 
-
 function DineOptions() {
-  const orderType = useSelector(state => state.orderType);
+  const orderType = useSelector((state) => state.orderType);
 
   return (
     <div className="ds-wrapper">

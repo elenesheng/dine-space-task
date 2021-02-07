@@ -5,7 +5,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { useSelector } from "react-redux";
 
 function RadioButton(props) {
-  const orderType = useSelector(state => state.orderType);
+  const orderType = useSelector((state) => state.orderType);
 
   return (
     <div

@@ -5,13 +5,13 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import RadioButton from "./RadioButton";
 import { useSelector, useDispatch } from "react-redux";
-import { setOrderType } from './../../store/actionTypes';
+import { setOrderType } from "./../../store/actionTypes";
 
 function DsOrderTypeSelector({ ordertype }) {
   const dispatch = useDispatch();
 
   let valueHandler = (e) => {
-    dispatch(setOrderType(e.target.value))
+    dispatch(setOrderType(e.target.value));
   };
   return (
     <div className="radio-buttons">

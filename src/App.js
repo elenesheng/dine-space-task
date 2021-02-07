@@ -1,11 +1,10 @@
-import logo from './logo.svg';
-import DineOptions from './components/ds-dine-options/DineOptions';
-
+import logo from "./logo.svg";
+import DineOptions from "./components/ds-dine-options/DineOptions";
 
 function App() {
   return (
     <div className="App">
-        <DineOptions/>
+      <DineOptions />
     </div>
   );
 }

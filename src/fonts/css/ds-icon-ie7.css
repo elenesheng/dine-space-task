@@ -1,15 +1,31 @@
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'ds-icon';
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "ds-icon";
   font-style: normal;
   font-weight: normal;
- 
+
   /* fix buttons height */
   line-height: 1em;
- 
+
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
 }
- 
-.icon-dine-out { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe800;&nbsp;'); }
-.icon-take-away { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe801;&nbsp;'); }
-.icon-reservation { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe81a;&nbsp;'); }
+
+.icon-dine-out {
+  *zoom: expression(
+    this.runtimeStyle[ "zoom" ] = "1",
+    this.innerHTML = "&#xe800;&nbsp;"
+  );
+}
+.icon-take-away {
+  *zoom: expression(
+    this.runtimeStyle[ "zoom" ] = "1",
+    this.innerHTML = "&#xe801;&nbsp;"
+  );
+}
+.icon-reservation {
+  *zoom: expression(
+    this.runtimeStyle[ "zoom" ] = "1",
+    this.innerHTML = "&#xe81a;&nbsp;"
+  );
+}
